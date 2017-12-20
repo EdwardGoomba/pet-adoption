@@ -28,7 +28,22 @@ $('#add-pet').on('click', function() {
 
   $('#posted-pets').append($newPet);
 
+  // Remove element by pressing x
+  $('.close').on('click', function() {
+    $(this).parent().remove();
+  });
+
+  // Reset form fields on submit
+  $name.val('');
+  $species.val('');
+  $notes.val('');
+
 });
 
 // Puppy images fade in
 $('img').css('display', 'none').fadeIn(1600);
+
+// Toggle select on cards
+$('.card').on('click', function() {
+  $(this).toggleClass('selected');
+});
